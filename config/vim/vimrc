@@ -1,0 +1,20 @@
+
+" This is my vimrc file.
+
+" Turns on syntax highlighting
+syntax on
+
+" Turns on numbering
+set number
+set relativenumber
+
+" Alters tabstop to 4 spaces
+"tabstop '    '
+" This doesnt work YET
+
+" utf-8 encoding
+set encoding=utf-8
+
+" setup indenting
+filetype plugin indent on
+set autoindent
