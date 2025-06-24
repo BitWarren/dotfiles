@@ -7,7 +7,7 @@
 Ensuring ~/.config is respected and limiting how many hidden files can clog up the home DIR.
 
 - Get configs in git repo ✔
-- Make program-install-list into markdown file 
+- Make program-install-list into markdown file ✔
 - Clean up ~/. files and move to .config where possible
 - Add color to to-dos.md
 
@@ -15,6 +15,10 @@ Ensuring ~/.config is respected and limiting how many hidden files can clog up t
 
 - Add second monitor
 - Background blurring?
+
+### Qtile Configurations
+
+- Add bar?
 
 ### Waypaper Configurations
 
@@ -62,6 +66,10 @@ Ricing NeoVIM and tweaking functionality.
 - icons for filetype
 
 ## == ANSIBLE SECTION ==
+
+### Deploy Config Script
+
+- Include .zshenv in copy
 
 ### ANSIBLE TO-DOs
 

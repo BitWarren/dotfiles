@@ -1,2 +1,4 @@
 #!/bin/bash
-cp -rfv ./config ~/.config
+cp -rfv .zshenv ~
+cp -rfv ./config/ ~/.config
+cp -rfv ./Downloads ~
