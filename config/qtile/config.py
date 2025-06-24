@@ -24,10 +24,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, qtile, widget
+from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import os
+import subprocess
+
+
+# Autostart Script
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser("~/.config/qtile/autostart.sh")
+    subprocess.run([home])
+
 
 mod = "mod4"
 #terminal = guess_terminal()
@@ -79,6 +89,11 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # USER ADDED KEYS
+    Key([mod, "shift"], "l", lazy.window.down_opacity(), desc="Lower window opacity"),
+    Key([mod, "shift"], "i", lazy.window.up_opacity(), desc="Increase window opacity"),
+        
+
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -123,10 +138,8 @@ for i in groups:
 
 layouts = [
     # My tweaked monad tall
-    #layout.MonadTall(border_width=2, margin=10, border_normal="#2E383C", border_focus="#3c4841"),
-    #layout.MonadTall(border_width=2, margin=10, border_normal="#3c4841", border_focus="#83C092"),
-    layout.MonadTall(border_width=2, margin=10, border_normal="#3C4841", border_focus="#83C092"),
-    # layout.Bsp(border_width=2, margin=8, border_normal="#3C4841", border_focus="#83C092"),
+    layout.MonadTall(border_width=2, margin=12, border_normal="#3C4841", border_focus="#83C092"),
+    layout.Bsp(border_width=2, margin=8, border_normal="#3C4841", border_focus="#83C092"),
 
     # Original cfgs
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
@@ -208,7 +221,8 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-    ]
+    ],
+    border_focus="#83C092"
 )
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -236,3 +250,4 @@ wl_xcursor_size = 24
 wmname = "LG3D"
 
 # USER ADDITIONS
+

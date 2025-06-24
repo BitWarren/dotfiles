@@ -1,7 +1,0 @@
-htop
-yay
-waypaper
-zsh
-    - starship prompt
-vim-plug
-otf-fira-mono-italic-git
