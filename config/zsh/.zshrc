@@ -32,6 +32,7 @@ compinit
 
 
 # User additions
+setopt interactivecomments
 
 
 # Starship Prompt Activiation
@@ -40,3 +41,6 @@ eval "$(starship init zsh)"
 
 # Aliases
 alias vim="vim -u ~/.config/vim/vimrc"
+alias v="nvim"
+alias ll="ls -l --color=auto"
+alias ls="ls --color=auto"

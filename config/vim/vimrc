@@ -8,9 +8,8 @@ syntax on
 set number
 set relativenumber
 
-" Alters tabstop to 4 spaces
-"tabstop '    '
-" This doesnt work YET
+" Sets splitting from the right
+set splitright
 
 " utf-8 encoding
 set encoding=utf-8

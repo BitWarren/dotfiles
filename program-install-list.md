@@ -50,11 +50,14 @@ way I desire. They are installed while installing Arch via Ansible.
     - vim-plug [git]
 
 ### Other
-- waypaper
+- waypaper-git [yay]
+- nwg-look
+- everforest-gtk-theme-git [aur]
+- swww
 - rofi 
 - pcmanfm 
 - firefox 
 - btop 
 - htop
-- qutebrowser  #FLAGGED FOR REMOVAL#
+- qutebrowser  # "everforest themes for qute browser"
 - librewolf [yay]

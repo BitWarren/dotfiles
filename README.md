@@ -12,3 +12,5 @@ an already configured machine which simply uses cp to copy files.
 - Add deploy-confg.sh script
 - Qtile autostart script
 - Waypaper auto restore
+- Add nwg-look for gtk themes
+- Add everforest-gtk-theme-git

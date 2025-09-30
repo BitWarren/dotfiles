@@ -8,21 +8,24 @@ Ensuring ~/.config is respected and limiting how many hidden files can clog up t
 
 - Get configs in git repo ✔
 - Make program-install-list into markdown file ✔
-- Clean up ~/. files and move to .config where possible
+- Clean up ~/. files and move to .config where possible (WIP)
 - Add color to to-dos.md
 
 ### Wayland Configurations
 
+- Opacity +/- ALL windows of class
 - Add second monitor
 - Background blurring?
 
 ### Qtile Configurations
 
+- waypaper float rule
 - Add bar?
 
 ### Waypaper Configurations
 
 - Auto load wallpaper ✔
+- waypaper gtk dark ✔
 - Blur?
 
 ### ZSH Shell Customizations
@@ -33,16 +36,19 @@ Making the ZSH shell look and behave the way I want.
 - Refine Keybinds
     - CTRL + arrow word jumps
     - Del should do smth
-- configure zsh
+- Configure zsh
     - zsh alias vim -u vimrc ✔
     - zsh starship RECOLOR prompt
     - LS\_COLOR var add color for filetype
+    - ll list alias ✔
+    - zsh interactivecomments ✔
 
 ### VIM/NeoVIM Configurations
 
 Ricing NeoVIM and tweaking functionality.
 
 - vimrc init config ✔
+- vimrc set splitright ✔
 - auto save/load folds
 - vimrc keybinds
     - spellcheck toggle ✔
