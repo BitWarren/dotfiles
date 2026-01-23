@@ -28,6 +28,16 @@ Ensuring ~/.config is respected and limiting how many hidden files can clog up t
 - waypaper gtk dark ✔
 - Blur?
 
+### Kitty Terminal Customizations
+
+Making Kitty look and behave the way I want.
+
+- Clean up .conf file w/ Include
+- Refine Splits Keybinds
+- Set nvim as pager ✔
+    - Make nvim start at bottom ✔
+    - 8000 line scrollback ✔
+
 ### ZSH Shell Customizations
 
 Making the ZSH shell look and behave the way I want.
@@ -59,6 +69,11 @@ Ricing NeoVIM and tweaking functionality.
     - fzf??
     - python stuff?
     - YAML stuff?
+
+### Btop Customizations
+
+- Lower ms delay
+- Theme set in cfg
 
 ### Zathura Document Viewer
 

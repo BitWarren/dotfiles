@@ -17,6 +17,8 @@ way I desire. They are installed while installing Arch via Ansible.
 - mtools 
 - base-devel 
 - networkmanager 
+- openssh
+- python
 
 ### Wayland / WM / DisplayMgr
 - virtualbox-guest-utils #FLAGGED FOR REMOVAL#
@@ -50,6 +52,8 @@ way I desire. They are installed while installing Arch via Ansible.
     - vim-plug [git]
 
 ### Other
+- ansible
+- yamllint
 - waypaper-git [yay]
 - nwg-look
 - everforest-gtk-theme-git [aur]
@@ -61,3 +65,4 @@ way I desire. They are installed while installing Arch via Ansible.
 - htop
 - qutebrowser  # "everforest themes for qute browser"
 - librewolf [yay]
+- trash-cli

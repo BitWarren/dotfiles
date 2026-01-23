@@ -11,9 +11,15 @@ set relativenumber
 " Sets splitting from the right
 set splitright
 
+" set clipboard
+set clipboard="osc52"
+
 " utf-8 encoding
 set encoding=utf-8
 
 " setup indenting
 filetype plugin indent on
 set autoindent
+
+" set netrw file listing type to tree
+let g:netrw_liststyle= 3
