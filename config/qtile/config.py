@@ -25,7 +25,7 @@
 # SOFTWARE.
 
 from libqtile import bar, layout, qtile, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 import os
@@ -51,13 +51,30 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    #Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    # The below will hop window regardless of layout type; includes floating windows
+    #===================================================================================================
+    Key([mod], "space", lazy.group.next_window(), desc="Move window focus to any other window"),
+    # Temp bindings for Virtualbox Hypervisor (arrow keys)
+    #===================================================================================================
+    Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
+    Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
+    #===================================================================================================
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    # Temp bindings for Virtualbox Hypervisor (arrow keys)
+    #===================================================================================================
+    Key([mod, "shift"], "Left", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "Right", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), desc="Move window up"),
+    #===================================================================================================
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
@@ -89,9 +106,40 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    # USER ADDED KEYS
+    #===================================================================================================
+    # USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS 
+    #===================================================================================================
+    # Keys to increase/decrease opacity
+    #===================================================================================================
     Key([mod, "shift"], "l", lazy.window.down_opacity(), desc="Lower window opacity"),
     Key([mod, "shift"], "i", lazy.window.up_opacity(), desc="Increase window opacity"),
+    # KeyChord to Resize Floating Windows
+    #===================================================================================================
+    KeyChord([mod, "shift"], "r", [
+        Key([], "h", lazy.window.resize_floating(-20,0)),
+        Key([], "j", lazy.window.resize_floating(0,20)),
+        Key([], "k", lazy.window.resize_floating(0,-20)),
+        Key([], "l", lazy.window.resize_floating(20,0)),
+        Key([mod], "space", lazy.group.next_window(), desc="hop next window")],
+        mode=True,
+        name="Resize Floats",
+        desc="Resize floats w/ hjkl keys",
+
+    ),
+    #===================================================================================================
+    # KeyChord to Move Floating Windows
+    #===================================================================================================
+    KeyChord([mod, "shift"], "m", [
+        Key([], "h", lazy.window.move_floating(-20,0)),
+        Key([], "j", lazy.window.move_floating(0,20)),
+        Key([], "k", lazy.window.move_floating(0,-20)),
+        Key([], "l", lazy.window.move_floating(20,0)),
+        Key([mod], "space", lazy.group.next_window(), desc="hop next window")],
+        mode=True,
+        name="Move Floats",
+        desc="Resize floats w/ hjkl keys"
+    )
+    #===================================================================================================
         
 
 ]
@@ -137,9 +185,10 @@ for i in groups:
     )
 
 layouts = [
-    # My tweaked monad tall
-    layout.MonadTall(border_width=2, margin=12, border_normal="#3C4841", border_focus="#83C092"),
+    # My tweaked bsp tall
     layout.Bsp(border_width=2, margin=8, border_normal="#3C4841", border_focus="#83C092"),
+    # My tweaked monad tall
+    #layout.MonadTall(border_width=2, margin=12, border_normal="#3C4841", border_focus="#83C092"),
 
     # Original cfgs
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
@@ -219,6 +268,8 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(wm_class="org.qutebrowser.qutebrowser"),  # qute browser
+        Match(wm_class="waypaper"),  # qute browser
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],

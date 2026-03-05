@@ -13,7 +13,7 @@ zstyle ':completion:' menu select
 
 
 HISTFILE=~/.config/zsh/histfile
-HISTSIZE=1000
+HISTSIZE=8000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -37,6 +37,18 @@ setopt interactivecomments
 
 # Starship Prompt Activiation
 eval "$(starship init zsh)"
+
+
+# Keybinds
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+
+# Set word style
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>/ '$'\n'
+autoload -Uz select-word-style
+select-word-style normal
+zstyle ':zle:*' word-style unspecified
 
 
 # Aliases

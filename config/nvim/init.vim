@@ -19,6 +19,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline' 	" status line 
 Plug 'sainnhe/everforest' 	" everforest theme
+Plug 'https://github.com/momota/cisco.vim' " IOS Syntax Hilight
 
 call plug#end()
 

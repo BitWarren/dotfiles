@@ -24,7 +24,7 @@ way I desire. They are installed while installing Arch via Ansible.
 - virtualbox-guest-utils #FLAGGED FOR REMOVAL#
 - wayland 
 	- wlroots0.18 
-	- pywlroots 
+	- pywlroots # may not be needed now
 	- python-pywayland 
 	- python-cffi 
 	- python-xkbcommon 
@@ -39,6 +39,7 @@ way I desire. They are installed while installing Arch via Ansible.
 ### Function / PKG Mgr
 - git 
 - yay [git]
+- pacman-contrib
 
 ### Term / Shell
 - kitty 
