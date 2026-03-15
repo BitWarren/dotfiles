@@ -105,7 +105,12 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # Rofi run menus keys
+    #===================================================================================================
+    Key([mod], "r", lazy.spawn("rofi -show-icons -show run"), desc="Spawn a command using a prompt widget"),
+    Key([mod], "c", lazy.spawn("rofi -show-icons -show calc -modi calc"), desc="Spawn a command using a prompt widget"),
+    Key([mod], "n", lazy.spawn("rofi -show-icons -show window"), desc="Spawn a command using a prompt widget"),
     #===================================================================================================
     # USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS USER ADDED KEYS 
     #===================================================================================================
@@ -270,6 +275,7 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(wm_class="org.qutebrowser.qutebrowser"),  # qute browser
         Match(wm_class="waypaper"),  # qute browser
+        Match(wm_class="keepassxc"),  # qute browser
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ],

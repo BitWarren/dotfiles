@@ -1,0 +1,42 @@
+new_os_window
+os_window_title CML BREAKOUT
+new_tab 9000
+launch zsh -c 'telnet 127.0.0.1 9000'
+new_tab 9001
+launch zsh -c 'telnet 127.0.0.1 9001'
+new_tab 9002
+launch zsh -c 'telnet 127.0.0.1 9002'
+new_tab 9003
+launch zsh -c 'telnet 127.0.0.1 9003'
+new_tab 9004
+launch zsh -c 'telnet 127.0.0.1 9004'
+new_tab 9005
+launch zsh -c 'telnet 127.0.0.1 9005'
+new_tab 9006
+launch zsh -c 'telnet 127.0.0.1 9006'
+new_tab 9007
+launch zsh -c 'telnet 127.0.0.1 9007'
+new_tab 9008
+launch zsh -c 'telnet 127.0.0.1 9008'
+new_tab 9009
+launch zsh -c 'telnet 127.0.0.1 9009'
+new_tab 9010
+launch zsh -c 'telnet 127.0.0.1 9010'
+new_tab 9011
+launch zsh -c 'telnet 127.0.0.1 9011'
+new_tab 9012
+launch zsh -c 'telnet 127.0.0.1 9012'
+new_tab 9013
+launch zsh -c 'telnet 127.0.0.1 9013'
+new_tab 9014
+launch zsh -c 'telnet 127.0.0.1 9014'
+new_tab 9015
+launch zsh -c 'telnet 127.0.0.1 9015'
+new_tab 9016
+launch zsh -c 'telnet 127.0.0.1 9016'
+new_tab 9017
+launch zsh -c 'telnet 127.0.0.1 9017'
+new_tab 9018
+launch zsh -c 'telnet 127.0.0.1 9018'
+new_tab 9019
+launch zsh -c 'telnet 127.0.0.1 9019'

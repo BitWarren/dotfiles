@@ -54,5 +54,6 @@ zstyle ':zle:*' word-style unspecified
 # Aliases
 alias vim="vim -u ~/.config/vim/vimrc"
 alias v="nvim"
+alias vs="EDITOR=nvim sudoedit"
 alias ll="ls -l --color=auto"
 alias ls="ls --color=auto"

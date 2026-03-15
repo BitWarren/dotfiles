@@ -1,0 +1,11 @@
+new_os_window
+os_window_title BTRFS BACKUP PROJECT
+new_tab LOCAL SHELL
+cd ~/Projects/system/backker-backup/
+launch zsh
+new_tab REMOTE SSH
+cd ~/Projects/system/backker-backup/
+launch zsh
+new_tab SFTP
+cd ~/Projects/system/backker-backup/
+launch zsh
