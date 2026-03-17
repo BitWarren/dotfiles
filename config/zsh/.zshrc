@@ -12,11 +12,12 @@ zstyle ':completion:' menu select
 
 
 
+# History settings
 HISTFILE=~/.config/zsh/histfile
-HISTSIZE=8000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history
 bindkey -e
-# End of lines configured by zsh-newuser-install
 
 
 # The following lines were added by compinstall
@@ -31,7 +32,7 @@ compinit
 # End of lines added by compinstall
 
 
-# User additions
+# Comments settings
 setopt interactivecomments
 
 
@@ -42,6 +43,8 @@ eval "$(starship init zsh)"
 # Keybinds
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+bindkey "^U" backward-kill-line
+bindkey "^[[3~" delete-char
 
 
 # Set word style
@@ -57,3 +60,4 @@ alias v="nvim"
 alias vs="EDITOR=nvim sudoedit"
 alias ll="ls -l --color=auto"
 alias ls="ls --color=auto"
+alias hist="history 0"
